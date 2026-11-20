@@ -1452,5 +1452,12 @@ var busy=false;new MutationObserver(function(){if(busy)return;busy=true;try{dec(
 dec();
 })();
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js');
+  });
+}
+</script>
 </body>
 </html>
